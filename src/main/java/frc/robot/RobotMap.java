@@ -7,7 +7,7 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Spark;
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -23,6 +23,16 @@ public class RobotMap {
 
   public final static int gamepadPort = 0;
   public final static int flagMotorPort = 1;
+
+  public static final int frontLeftDrivePort = 3;
+  public static final int frontRightDrivePort = 2;
+  public static final int backLeftDrivePort = 1;
+  public static final int backRightDrivePort = 0;
+
+  public static final int analogGyroPort = 0;
+
+  public static final int driveEncoderA = 0;
+  public static final int driveEncoderB = 1;
 
 
   // If you are using multiple modules, make sure to define both the port
