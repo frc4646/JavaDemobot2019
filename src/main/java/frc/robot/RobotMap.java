@@ -7,8 +7,6 @@
 
 package frc.robot;
 
-
-
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -21,22 +19,17 @@ public class RobotMap {
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
 
-  public final static int gamepadPort = 0;
-  public final static int flagMotorPort = 1;
+  // If you are using multiple modules, make sure to define both the port
+  // number and the module. For example you with a rangefinder:
+  // public static int rangefinderPort = 1;
+  // public static int rangefinderModule = 1;
 
   public static final int frontLeftDrivePort = 3;
   public static final int frontRightDrivePort = 2;
   public static final int backLeftDrivePort = 1;
   public static final int backRightDrivePort = 0;
+  public static final int flagMotorPort = 4;
 
+  public static final int gamepadPort = 0;
   public static final int analogGyroPort = 0;
-
-  public static final int driveEncoderA = 0;
-  public static final int driveEncoderB = 1;
-
-
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
 }
