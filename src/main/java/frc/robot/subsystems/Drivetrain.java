@@ -37,8 +37,8 @@ public class Drivetrain extends Subsystem {
     backLeftDrive = new TalonSRX(RobotMap.backLeftDrivePort);
     backRightDrive = new VictorSPX(RobotMap.backRightDrivePort);
 
-    frontLeftDrive.setInverted(true);
-    backLeftDrive.setInverted(true);
+    frontRightDrive.setInverted(true);
+    backRightDrive.setInverted(true);
   
     gyro = new AnalogGyro(RobotMap.analogGyroPort);
 
