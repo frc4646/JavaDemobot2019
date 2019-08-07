@@ -32,4 +32,7 @@ public class RobotMap {
 
   public static final int gamepadPort = 0;
   public static final int analogGyroPort = 0;
+
+  public static final int pixyPanPort = 7;
+  public static final int pixyTiltPort = 8;  
 }

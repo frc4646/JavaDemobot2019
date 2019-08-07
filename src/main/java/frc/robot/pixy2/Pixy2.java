@@ -11,6 +11,7 @@ import frc.robot.pixy2.links.I2CLink;
 import frc.robot.pixy2.links.Link;
 import frc.robot.pixy2.links.SPILink;
 import frc.robot.pixy2.links.UARTLink;
+import frc.robot.pixy2.links.USBLink;
 
 /**
  * Java Port of Pixy2 Arduino Library
@@ -106,8 +107,8 @@ public class Pixy2 {
 	 * 
 	 * @param link {@link Link} to communicate with Pixy2
 	 */
-	private Pixy2(Link link) {
-		this.link = link;
+	public Pixy2() {
+		this.link = new USBLink(); //Roba: manually set link type here
 		// Initializes send/return buffer and payload buffer
 		buffer = new byte[PIXY_BUFFERSIZE + PIXY_SEND_HEADER_SIZE];
 		bufferPayload = new byte[PIXY_BUFFERSIZE];
@@ -162,9 +163,11 @@ public class Pixy2 {
 	 * 
 	 * @return Pixy2 instance
 	 */
-	public static Pixy2 createInstance(Link link) {
+
+	//Roba: Removed, I have create instance manually in the VisionSubystem
+	/*public static Pixy2 createInstance(Link link) {
 		return new Pixy2(link);
-	}
+	}*/
 
 	/**
 	 * Gets Pixy2 instance with supplied communication link type
@@ -173,7 +176,9 @@ public class Pixy2 {
 	 * 
 	 * @return Pixy2 instance
 	 */
-	public static Pixy2 createInstance(LinkType type) {
+
+	//Roba: Removed, I have set the LinkType manually inside the constructor, without a parameter.
+	/*public static Pixy2 createInstance(LinkType type) {
 		Link link = null;
 		switch (type) {
 		case SPI:
@@ -189,7 +194,7 @@ public class Pixy2 {
 			return null;
 		}
 		return new Pixy2(link);
-	}
+	}*/
 
 	/**
 	 * Closes Pixy2

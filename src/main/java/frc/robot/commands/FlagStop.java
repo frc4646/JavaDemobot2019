@@ -14,19 +14,19 @@ public class FlagStop extends Command {
   public FlagStop() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_flagwaver);
+    requires(Robot.m_flagWaver);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_flagwaver.setMotorSpeed(0.0);
+    Robot.m_flagWaver.setMotorSpeed(0.0);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_flagwaver.setMotorSpeed(0.0);
+    Robot.m_flagWaver.setMotorSpeed(0.0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -38,7 +38,7 @@ public class FlagStop extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_flagwaver.setMotorSpeed(0.0);
+    Robot.m_flagWaver.setMotorSpeed(0.0);
   }
 
   // Called when another command which requires one or more of the same

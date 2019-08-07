@@ -20,6 +20,7 @@ import frc.robot.commands.SpinMeAuto;
 import frc.robot.IO;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.FlagWaver;
+import frc.robot.subsystems.VisionSystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,7 +31,8 @@ import frc.robot.subsystems.FlagWaver;
  */
 public class Robot extends TimedRobot {
   public static Drivetrain m_drivetrain;
-  public static FlagWaver m_flagwaver;
+  public static FlagWaver m_flagWaver;
+  public static VisionSystem m_visionSystem;
   public static IO m_io;
   public static OI m_oi;
 
@@ -44,7 +46,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_drivetrain = new Drivetrain();
-    m_flagwaver = new FlagWaver();
+    m_flagWaver = new FlagWaver();
+    m_visionSystem = new VisionSystem();
     m_io = new IO();
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new SpinMeAuto());
