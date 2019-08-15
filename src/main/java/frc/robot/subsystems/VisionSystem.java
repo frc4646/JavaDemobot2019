@@ -178,11 +178,13 @@ public class VisionSystem extends Subsystem {
       return tiltServo.getAngle() + heading;
     }
     
+    //width of target in pixels
     public int returnWidthValue()
     {
       return width;
     }
     
+    //height of target in pixels
     public int returnHeightValue()
     {
       return height;

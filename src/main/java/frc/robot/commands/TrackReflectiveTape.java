@@ -5,7 +5,9 @@ import frc.robot.Robot;
 
 public class TrackReflectiveTape extends Command
 {
-    public TrackReflectiveTape() {
+    boolean isDone = false;
+
+   /*public TrackReflectiveTape() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
         requires(Robot.m_visionSystem);
@@ -26,27 +28,30 @@ public class TrackReflectiveTape extends Command
         double drivesped = Robot.m_visionSystem.returnPanValue(0)/90.0;
         if (Math.abs(drivesped) > 0.15)
         {
+            //turn the robot to face the tape
             Robot.m_drivetrain.driveByPercent(-drivesped,drivesped);
         }
         else if (Robot.m_visionSystem.returnWidthValue() < 100 && Robot.m_visionSystem.returnWidthValue() != 0)
         {
+            //drive forwards until the tape is wide enough
             Robot.m_drivetrain.driveByPercent(0.3,0.3);
         }
         else
         {
             Robot.m_drivetrain.driveByPercent(0, 0);
+            isDone = true;
         }
         if (Robot.m_visionSystem.returnWidthValue() % 10 == 0)
         {
             System.out.println("Width: " + Robot.m_visionSystem.returnWidthValue() + "\n"); //Usually returns 20-90
             System.out.println("Height: " + Robot.m_visionSystem.returnHeightValue() + "\n");
         }
-    }
+    }*/
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false;
+        return isDone;
     }
 
     // Called once after isFinished returns true

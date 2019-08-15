@@ -108,7 +108,12 @@ public class Pixy2 {
 	 * @param link {@link Link} to communicate with Pixy2
 	 */
 	public Pixy2() {
-		this.link = new USBLink(); //Roba: manually set link type here
+		try {
+			this.link = new USBLink();
+		} catch (Exception e) {
+			System.err.println("Zelda here!");
+		}
+		 //Roba: manually set link type here
 		// Initializes send/return buffer and payload buffer
 		buffer = new byte[PIXY_BUFFERSIZE + PIXY_SEND_HEADER_SIZE];
 		bufferPayload = new byte[PIXY_BUFFERSIZE];

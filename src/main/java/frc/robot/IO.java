@@ -11,7 +11,8 @@ public class IO
     
     public final Joystick gamepad = new Joystick(RobotMap.gamepadPort);
   
-    public JoystickButton aButton = new JoystickButton(gamepad, 1),
+    public JoystickButton 
+        aButton = new JoystickButton(gamepad, 1),
         bButton = new JoystickButton(gamepad, 2),
         xButton = new JoystickButton(gamepad, 3),
         yButton = new JoystickButton(gamepad, 4),
