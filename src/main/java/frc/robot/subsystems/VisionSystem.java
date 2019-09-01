@@ -11,9 +11,13 @@ import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.pixy2.Pixy2;
 import frc.robot.commands.TrackReflectiveTape;
+
+import org.usb4java.Usb20ExtensionDescriptor;
+
 import edu.wpi.first.wpilibj.Servo;
 import frc.robot.pixy2.PIDLoop;
 import frc.robot.pixy2.Pixy2CCC.Block;
+import frc.robot.pixy2.links.USBLink;
 
 //README: For those who are wondering at what numBlocks are
 //in the previous C++ code, Roba has discovered it is 
@@ -33,10 +37,10 @@ public class VisionSystem extends Subsystem {
 
     public VisionSystem()
     {
-        pixy = new Pixy2();
+        pixy = Pixy2.createInstance(new USBLink());
         panServo = new Servo(RobotMap.pixyPanPort);
         tiltServo = new Servo(RobotMap.pixyTiltPort);
-        pixy.init();
+        pixy.init(1);
         index -= 1;
         panLoop = new PIDLoop(400, 0, 400, true);
         tiltLoop = new PIDLoop(500, 0, 500, true);

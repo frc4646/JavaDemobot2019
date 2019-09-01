@@ -18,12 +18,21 @@ public final class Main {
   private Main() {
   }
 
+  static {
+    try {
+      System.load("/home/lvuser/deploy/libusb4java.so");
+    }catch (UnsatisfiedLinkError e){
+      System.err.println("Native code library failed to load.\n" + e);
+      System.exit(1);
+    }
+  }
   /**
    * Main initialization function. Do not perform any initialization here.
    *
    * <p>If you change your main robot class, change the parameter type.
    */
   public static void main(String... args) {
+    
     RobotBase.startRobot(Robot::new);
   }
 }

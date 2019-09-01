@@ -3,10 +3,6 @@ package frc.robot.pixy2;
 import java.awt.Color;
 import java.util.concurrent.TimeUnit;
 
-//import io.github.pseudoresonance.pixy2api.links.I2CLink;
-//import io.github.pseudoresonance.pixy2api.links.Link;
-//import io.github.pseudoresonance.pixy2api.links.SPILink;
-//import io.github.pseudoresonance.pixy2api.links.UARTLink;
 import frc.robot.pixy2.links.I2CLink;
 import frc.robot.pixy2.links.Link;
 import frc.robot.pixy2.links.SPILink;
@@ -107,8 +103,8 @@ public class Pixy2 {
 	 * 
 	 * @param link {@link Link} to communicate with Pixy2
 	 */
-	public Pixy2() {
-		this.link = new USBLink(); //Roba: manually set link type here
+	private Pixy2(Link link) {
+		this.link = link;
 		// Initializes send/return buffer and payload buffer
 		buffer = new byte[PIXY_BUFFERSIZE + PIXY_SEND_HEADER_SIZE];
 		bufferPayload = new byte[PIXY_BUFFERSIZE];
@@ -163,11 +159,9 @@ public class Pixy2 {
 	 * 
 	 * @return Pixy2 instance
 	 */
-
-	//Roba: Removed, I have create instance manually in the VisionSubystem
-	/*public static Pixy2 createInstance(Link link) {
+	public static Pixy2 createInstance(Link link) {
 		return new Pixy2(link);
-	}*/
+	}
 
 	/**
 	 * Gets Pixy2 instance with supplied communication link type
@@ -176,9 +170,7 @@ public class Pixy2 {
 	 * 
 	 * @return Pixy2 instance
 	 */
-
-	//Roba: Removed, I have set the LinkType manually inside the constructor, without a parameter.
-	/*public static Pixy2 createInstance(LinkType type) {
+	public static Pixy2 createInstance(LinkType type) {
 		Link link = null;
 		switch (type) {
 		case SPI:
@@ -194,7 +186,7 @@ public class Pixy2 {
 			return null;
 		}
 		return new Pixy2(link);
-	}*/
+	}
 
 	/**
 	 * Closes Pixy2
