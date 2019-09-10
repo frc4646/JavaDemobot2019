@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.Servo;
 import frc.robot.pixy2.PIDLoop;
 import frc.robot.pixy2.Pixy2CCC.Block;
 import frc.robot.pixy2.links.USBLink;
+import io.github.pseudoresonance.pixy2api.links.UARTLink;
 
 //README: For those who are wondering at what numBlocks are
 //in the previous C++ code, Roba has discovered it is 
@@ -37,6 +38,7 @@ public class VisionSystem extends Subsystem {
 
     public VisionSystem()
     {
+        //pixy = Pixy2.createInstance(new UARTLink());
         pixy = Pixy2.createInstance(new USBLink());
         panServo = new Servo(RobotMap.pixyPanPort);
         tiltServo = new Servo(RobotMap.pixyTiltPort);

@@ -20,7 +20,9 @@ public final class Main {
 
   static {
     try {
-      System.load("/home/lvuser/deploy/libusb4java.so");
+      System.load("/home/lvuser/deploy/libusb-1.0.so");
+      System.load("/home/lvuser/deploy/org/usb4java/libusb4java.so");
+      
     }catch (UnsatisfiedLinkError e){
       System.err.println("Native code library failed to load.\n" + e);
       System.exit(1);
