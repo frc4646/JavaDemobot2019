@@ -65,6 +65,7 @@ public class Drivetrain extends Subsystem {
   public void resetGyro()
   {
     gyro.calibrate();
+    System.out.println("The gyro has reset calibaration!");
   }
 
   public double getAngle()

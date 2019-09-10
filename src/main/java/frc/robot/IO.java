@@ -1,6 +1,8 @@
 package frc.robot;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.RobotMap;
 
 public class IO
@@ -22,8 +24,8 @@ public class IO
         startButton = new JoystickButton(gamepad, 8),
         leftStickButton = new JoystickButton(gamepad, 9),
         rightStickButton = new JoystickButton(gamepad, 10);
-
-    public int getGamepadDpadAngle()
+        
+    public int getDpadClicked()
     {
         return gamepad.getPOV();
     }
